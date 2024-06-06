@@ -1,0 +1,118 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+
+{% block bodycontent %}
+<link rel="stylesheet" href="{% static 'css/newcase.css' %}">
+<script src="{% static 'js/date.js' %}"></script>
+
+
+   {% if query %}
+        {% if student %}
+            <div class="case-container">
+               <!--<a href="{% url 'case-list' %}" class="caselist-btn">Case Profile List</a>--> 
+                <form class="case-form" method="POST" action="">
+                    {% csrf_token %}
+                    <div class="case-img">
+                        <img src="{% static 'imgs/newlogo.jpg' %}">
+                    </div>
+                    <div class="labels">
+                        <h4 class="sao-label">Student Affairs Office</h4>
+                        <h2 class="svr-label">STUDENT VIOLATION REPORT</h2>
+                    </div>
+
+                    <div class="main-content">
+                            <div class="contens-container">
+                                <label for="date">Date:</label>
+                                <input type="date" id="date" name="case_date" class="case_date" required>
+                            </div>
+
+                            <div class="student_name1">
+                                <div class="input-container">
+                                    <label class="label-student" for="student_name">Name of Student:</label>
+                                    <input type="text" id="student_name" class="student_name" 
+                                     name="student_name" value="{{ student.lastname }}, {{ student.firstname }} {{ student.middlename }}" readonly>
+                                </div>
+                                
+                                <div class="input-container">
+                                    <label for="year_section">Course/Year/Section:</label>
+                                    <input type="text" name="year_section" class="year_section" id="year_section" value="{{ student.degree }} - {{ student.year_level }}ND YEAR" readonly>
+                                </div>
+                            </div>
+
+                            <div class="student_violation1">
+                                <label class="label-violation" for="student_violation">Student's Violation:</label>
+                                <input type="text" name="violation" class="violation" id="student_violation" required>
+                            </div>
+
+                            <div class="description">
+                                <div class="input-container">
+                                    <label class="label-descript" for="descript">Description:</label>
+                                    <input type="text" name="description"  id="descript" class="descript" required>
+                                </div>
+                            </div>
+
+
+                            <div class="classification">
+                                <div class="class-cmb">
+                                    <label class="label-class" for="classified">Classification:</label>
+                                    <select name="classified" id="classified" class="classified" >
+                                        <option value=""disabled selected>Select Classification</option>
+                                        <option value="1">Classification 1</option>
+                                        <option value="2">Classification 2</option>
+                                        <option value="3">Classification 3</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+                            
+
+                            <div class="footer-content">
+                                <h4 class="">Reported By:</h4>
+                                <div class="guard-signature">
+                                    <input type="text" class="guard-sign" id="guard-sign" name="reported_by" required>
+                                    <label class="label-guard" for="guard-sign">Security Guard/Watchman</label>
+                                </div>
+                                
+                                
+                                <div class="received_by">
+                                    <h5>Received By:</h5>
+                            
+                                    <select name="received_by" class="custom-select" required >
+                                        <option value=""disabled selected>Select Department</option>
+                                        <option value="COED">College of Education</option>
+                                        <option value="LLCD">Languages, Literature and Communication Department</option>
+                                        <option value="BSIT">BSIT Dept.</option>
+                                        <option value="BIT">BIT Dept.</option>
+                                        <option value="BSF">BSF Dept.</option>
+                                        <option value="BSA">BSA Dept.</option>
+                                        <option value="BSHM">BSHM Dept.</option>
+                                        <option value="BSIE">BSIE Dept.</option>
+                                    </select>
+                                    <div class="select-arrow"></div>
+                                
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mybtn-container">
+                        <button class="myButton" type="submit">Save Case</button>
+                    </div>
+                
+
+                </form>
+
+            </div>
+        {% else %}
+            <p class="error">No student found with that ID.</p>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
+
+
+

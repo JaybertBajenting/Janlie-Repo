@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% block bodycontent %}
+
+<link rel="stylesheet" href="{% static 'css/Goodmoral.css' %}">
+<script src="{% static 'js/date2.js' %}"></script>
+
+<div class="request-container">
+    <img src="{% static 'imgs/newlogo.jpg' %}">
+    <div class="request-content">
+        <div class="req-inputs">
+            <form method="post" action="{% url 'goodmoral' %}">
+                {% csrf_token %}
+                <div class="autodate-container">
+                    <input type="datetime-local" name="autodate"  id="autodate" class="autodate">
+                </div>
+                <label for="student_id">Enter Student ID:</label>
+                <input type="text" placeholder="Student ID" id="student_id" name="student_id" class="inputs">
+                <button type="submit" class="myButton1" name="goodmoral">Enter</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,154 @@
+
+
+/*STUDENT DISCIPLINE*/
+
+/*TRANSACTION REPORT*/
+.transact-container{
+    margin-left: 22%;
+}
+.transact-container img{
+    width: 45%;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 27%;
+    margin-bottom: 0;
+}
+.transact-header{
+   /* margin-top: 1%;*/
+   top: 90%;
+    margin-left: 2%;
+    margin-bottom: 0;
+
+}
+.transact-header button input[type="datetime-local"]{
+    margin-top: 5%;
+    color: black;
+}
+input[type="datetime-local"]{
+    color: black;
+}
+/*filter button*/
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 17px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+/*Date na input*/
+.dates {
+    margin-top: 20px;
+
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.date {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+}
+
+
+
+.transact-table {
+ 
+    margin: 0 auto;
+
+}
+.transact-table h2{
+    background-color: #007dc1;
+    margin-top: 1%;
+    text-align: center;
+    width: 98%;
+    margin-left: 1%;
+    padding: 10px;
+}
+
+table {
+    margin-top: 0;
+    width: 98%;
+    border-collapse: collapse;
+   /* margin: 20px auto; */
+   margin: 0 auto;
+    font-size: 18px;
+
+
+}
+
+th, td {
+    padding: 10px;
+    color: black;
+    
+   /* border: 1px solid #2B40D1;*/
+    font-size: 15px;
+}
+
+th {
+    width: 20px;
+    background-color: #4eacde;
+    text-align: left; 
+    padding-right: 0px;
+    
+
+
+}
+
+td{
+    width: 20px;
+    background-color: transparent;
+    text-align: left; 
+    padding-right: 0px;
+    border-bottom: 1px solid #586ced;
+   
+}
+
+/*Go to dashboard na button ni bai*/
+.myButton1 {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+    margin-top: 15%;
+    margin-left: 43%;
+}
+.myButton1:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}

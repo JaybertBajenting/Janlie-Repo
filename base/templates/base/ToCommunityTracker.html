@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block bodycontent %}
+<link rel="stylesheet" href="{% static 'css/tocomm.css' %}">
+<div class="to-communityservice">
+            
+    <a href="{% url 'service-view' %}" class="user-btn">User</a>
+    <a href="{% url 'case-list' %}" class="admin-btn">Admin</a>
+
+</div>
+{% endblock %}

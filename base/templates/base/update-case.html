@@ -1,0 +1,135 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+
+
+{% block bodycontent %}
+<link rel="stylesheet" href="{% static 'css/newcaseupdate.css' %}">
+
+
+{% if query %}
+    {% if student %}
+    <div class="case-container">
+        <a href="{% url 'case-list' %}" class="caselist-btn1">
+            <i style="font-size:24px; color: black; margin-left: 3%;"  class="fa">&#xf060;</i>
+        </a>
+        <form class="case-form" method="POST" action="">
+            {% csrf_token %}
+            <div class="case-img">
+                <img src="{% static 'imgs/newlogo.jpg' %}">
+            </div>
+            <div class="labels">
+                <h4 class="sao-label">Student Affairs Office</h4>
+                <h2 class="svr-label">UPDATE STUDENT VIOLATION REPORT</h2>
+            </div>
+    
+            <div class="main-content">
+                <div class="contens-container">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="case_date" class="case_date" value="{{ case.case_date|date:'Y-m-d' }}">
+                </div>
+    
+                <div class="student_name1">
+                    <div class="input-container">
+                        <label class="label-student" for="student_name">Name of Student:</label>
+                        <input type="text" id="student_name" class="student_name" name="student_name" value="{{ student.lastname }}, {{ student.firstname }} {{ student.middlename }}" readonly>
+                    </div>
+    
+                    <div class="input-container">
+                        <label for="year_section">Course/Year/Section:</label>
+                        <input type="text" name="year_section" class="year_section" id="year_section" value="{{ student.degree }} - {{ student.year_level }}" readonly>
+                    </div>
+                </div>
+    
+                <div class="student_violation1">
+                    <label class="label-violation" for="student_violation">Student's Violation:</label>
+                    <input type="text" name="violation" class="violation" id="student_violation" value="{{ case.violation }}">
+                </div>
+    
+                <div class="description">
+                    <div class="input-container">
+                        <label class="label-descript" for="descript">Description:</label>
+                       <!-- <textarea name="description" id="descript" class="descript">{{ case.description }}</textarea>-->
+                       <input type="text" name="description"  id="descript" class="descript" value="{{ case.description }}">
+                    </div>
+                </div>
+    
+                <div class="classification">
+                    <div class="class-cmb">
+                        <label class="label-class" for="classified">Classification:</label>
+                        <select name="classified" id="classified" class="classified">
+                            <option value="" disabled selected>Select Classification</option>
+                            <option value="1">Classification 1</option>
+                            <option value="2">Classification 2</option>
+                            <option value="3">Classification 3</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="footer-content">
+                    <h4 class="report">Reported By:</h4>
+                    <div class="guard-signature">
+                        <input type="text" class="guard-sign" id="guard-sign" name="reported_by" value="{{ case.reported_by }}">
+                        <label class="label-guard" for="guard-sign">Security Guard/Watchman</label>
+                    </div>
+    
+                    <div class="received_by">
+                        <h5>Received By:</h5>
+                        <select name="received_by[]" class="custom-select">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="COE" {% if 'COE' in case.received_by %}selected{% endif %}>College of Education</option>
+                            <option value="LLC" {% if 'LLC' in case.received_by %}selected{% endif %}>Languages, Literature and Communication Dept.</option>
+                            <option value="BSIT" {% if 'BSIT' in case.received_by %}selected{% endif %}>BSIT Dept.</option>
+                            <option value="BIT" {% if 'BIT' in case.received_by %}selected{% endif %}>BIT Dept.</option>
+                            <option value="BSF" {% if 'BSF' in case.received_by %}selected{% endif %}>BSF Dept.</option>
+                            <option value="BSA" {% if 'BSA' in case.received_by %}selected{% endif %}>BSA Dept.</option>
+                            <option value="BSHM" {% if 'BSHM' in case.received_by %}selected{% endif %}>BSHM Dept.</option>
+                            <option value="BSIE" {% if 'BSIE' in case.received_by %}selected{% endif %}>BSIE Dept.</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mybtn-container">
+                <button class="myButton" type="submit">Save Case</button>
+            </div>
+        </form>
+    </div>
+    
+    {% else %}
+       <!-- <p>No student found with that ID.</p>-->
+       <script>
+        $(document).ready(function() {
+            $('#errorModal').modal('show');
+        });
+    </script>
+    {% endif %}
+{% endif %}
+<!-- Modal HTML -->
+<div id="errorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                No student found with that ID.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+

@@ -1,0 +1,56 @@
+
+/*STUDENT DISCIPLINE*/
+
+/*COMMUNITY SERVICE TRACKING*/
+
+.community-container img{
+    width: 35%;
+    height: auto;
+    margin-left: 44%;
+    margin-top: 3%;
+}
+.community-container h2{
+    margin-top: 1%;
+    margin-left: 51%;
+}
+.content1{
+    margin-left: 10%;
+    padding: 20px;
+
+}
+.content1 p{
+    margin-bottom: 25px;
+}
+.back-btn{
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+
+.for-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 20px;
+    align-items: center;
+}
+
+.item {
+    display: contents; 
+}
+
+label {
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.for-content p{
+    margin-top: 2%;
+    text-decoration: underline;
+
+}

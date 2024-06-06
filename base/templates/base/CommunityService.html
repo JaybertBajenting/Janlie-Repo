@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block bodycontent %}
+<link rel="stylesheet" href="{% static 'css/CommunityService.css' %}">
+<div class="community-container">
+    <img src="{% static 'imgs/newlogo.jpg' %}">
+    <div class="label-cst">
+        <h2>Community Service Tracker</h2>
+    </div>
+
+    <div class="back-btn">
+        <p>Back</p>
+        <a href="{% url 'to_community_service' %}">
+            <i style="font-size:24px" class="fa">&#xf060;</i>
+        </a>
+
+    </div>
+    
+    <div class="for-content">
+        <div class="content1">
+            {% if student %}
+            <div class="item">
+                <label for="name">Name:</label>
+                <p id="name">{{student.lastname}}, {{student.firstname}} {{student.middlename}}</p>
+            {% endif %}
+            {% for case_item in case %}
+                <div class="item">
+                    <label for="violate">Violation:</label>
+                    <p id="violate">{{ case_item.violation }}</p>
+                </div>
+                <div class="item">
+                    <label for="descript">Description:</label>
+                    <p id="descript">{{ case_item.description }}</p>
+                </div>
+            {% endfor %}
+                {% for service_item in service %}
+                <div class="item">
+                    <label for="hours-need">Hours Needed:</label>
+                    <p id="hours-need">{{ service_item.hours_needed }}</p>
+                </div>
+                <div class="item">
+                    <label for="hours-complete">Hours Completed:</label>
+                    <p id="hours-complete">{{ service_item.service_rendered }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+   
+    
+</div>
+
+
+{% endblock %}

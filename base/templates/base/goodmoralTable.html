@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Case List</title>
+    <link rel="stylesheet" href="{% static 'css/gmTable.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-logo">
+        <img src="{% static 'imgs/newlogo.jpg' %}" alt="new ctu logo">
+    </div>
+
+    <div class="container">
+        <h2>Request Good Moral</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Year/Section</th>
+                    <th>Reason</th>
+                    <th>Date/Time</th>
+                    <th>Sanction</th>
+                    <th>Hours Worked</th>
+                    <th>Remaining Hours</th>
+                    <th>Good Moral</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for case in case_profiles %}
+                <tr>
+                    <td>{{ case.student.lastname }}, {{ case.student.firstname }} {{ case.student.middlename }}</td>
+                    <td>{{ case.student.degree }} - {{ case.student.year_level }} YEAR</td>
+                    <td>{{ case.violation }}</td>
+                    <td>{{ case.case_date }}</td>
+                    <td>{{ case.student.get_sanction_display }}</td>
+                    <td>{{ case.student.community_service_hours|default:"None" }}</td>
+                    <td>{{ case.student.community_service_hours|default:"None" }}</td>
+                    <td>
+                        <a class="request-btn" href="{% url 'GoodMoralTemplate' %}">Request</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <a href="{% url 'NewCase' %}" class="home-btn">Home</a>
+        </div>
+    </div>
+</body>
+</html>

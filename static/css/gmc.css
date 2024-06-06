@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  list-style-type: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.certificate-container {
+  margin-top: 50px;
+  justify-content: center;
+  margin-left: 350px;
+  width: 55%;
+  border: 2px solid #000;
+  height: 1120px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 50px;
+}
+
+.content1 {
+  color: black;
+  margin-top: -100px;
+  margin-left: -50px;
+}
+
+.content2{
+  color: black;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 23px;
+  margin-left: -50px;
+}
+
+.upper-contents {
+  margin-left: 55px;
+}
+
+.line {
+  width: 700px;
+  border-top: 3px solid #000;
+  color: black;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.bottomline {
+  width: 700px;
+  border-top: 1px solid #000;
+  color: black;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.ornum{
+  margin-top: 90px;
+  margin-left: 50px;
+  text-align: left;
+}
+
+.ornum p{
+  font-size: 12px;
+  color: black;
+}
+
+
+.content3,
+.content4 {
+  color: black;
+  margin-left: -50px;
+}
+
+.logo1 {
+  margin-top: 40px;
+  width: 100px;
+  height: 100px;
+  margin-right: 640px;
+}
+.logo2-container {
+  margin-top: -25px;
+}
+
+.logo2 {
+  width: 100px;
+  height: 100px;
+  margin-left: 550px;
+  margin-top: -1100px;
+}
+
+.maincontents {
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 1050px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.maincontents h4{
+  font-size: 18px;
+  font-family: Algerian;
+  color: black;
+}
+
+.maincontents h3{
+  font-size: 25px;
+  font-family: Algerian;
+  color: black;
+}
+
+.maincontents h2 {
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  font-family: Georgia;
+}
+
+.sub-contents {
+  margin-top: 55px;
+  width: 80%;
+  margin-left: 80px;
+}
+
+.sub-contents h3 {
+  font-size: 20px;
+  color: black;
+  text-align: justify;
+  margin-top: 30px;
+}
+
+.sub-contents p {
+  font-size: 20px;
+  text-indent: 30px;
+  margin: 20px 0;
+  text-align: justify;
+  color: black;
+}
+
+.Dean {
+  margin-top: 60px;
+}
+
+.Dean p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
+  text-align: right;
+  text-decoration: underline;
+}
+
+#lower-content{
+  margin-top: 60px;
+}
+
+#campus-director {
+  font-size: 16px;
+  margin-top: -20px;
+  margin-right: 35px;
+  text-decoration: none;
+}
+
+.footerImg{
+  margin-top: 25px;
+  width: 650px;
+}
+
+
+.print {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin: 20px; 
+ 
+}
+
+
+#print {
+  background-color: #ff8000; 
+  width: 200px;
+  color: white; 
+  border: none; 
+  padding: 15px 32px;  
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border-radius: 12px; 
+  transition: background-color 0.3s ease; 
+  margin-bottom: 30px;
+}
+
+
+#print i {
+  font-size: 25px; 
+  margin-right: 8px; 
+  color: white; 
+  vertical-align: middle; 
+}
+
+
+.underline {
+  text-decoration: underline;
+  color: black;
+}
+
+@media print {
+  .side-nav,
+  .search-container,
+  .orange-bar,
+  .print {
+    display: none !important;
+  }
+
+  .certificate-container {
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: none;
+  }
+
+  .content1 {
+    font-size: 18px;
+  }
+
+  .line {
+    width: 640px;
+    margin-left: 20px;
+    border-top: 3px solid #000;
+  }
+
+  .sub-contents h3,
+  .sub-contents p {
+    font-size: 14px;
+  }
+  #campus-director {
+    font-size: 13px;
+    margin-top: -20px;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+}

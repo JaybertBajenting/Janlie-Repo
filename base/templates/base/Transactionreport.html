@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block bodycontent %}
+<link rel="stylesheet" href="{% static 'css/Transact.css' %}">
+<div class="transact-container">
+            <img src="{% static 'imgs/newlogo.jpg' %}">
+            <div class="transact-header">
+                <div class="filter-but">
+                    <button class="myButton" name="filter-btn">Filter</button>
+                </div>
+                <div class="dates">
+                    <label for="date-time">Select Date:</label>
+                    <input type="datetime-local" id="date-time" class="date" name="date">
+                </div>
+            </div>
+
+            <div class="transact-table">
+                
+                <h2>Transaction Report</h2>
+                <table >
+                    <tr>
+                        <th style="width: 50px;">Transaction ID</th>
+                        <th style="width: 60px;">User</th>
+                        <th style="width: 90px;">Action</th>
+                        <th style="width: 80px;">Date</th>
+                        <th>User Type</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sample@gmail.com</td>
+                        <td>sample</td>
+                        <td>June 1, 2024 3:00 pm</td>
+                        <td>admin</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>sample2@gmail.com</td>
+                        <td>magkuha goodmoral</td>
+                        <td>June 1, 2024 3:00 pm</td>
+                        <td>user</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="dashboard-btn">
+                <button type="submit" class="myButton1" name="dashboard-btn">Go To Dashboard</button>
+
+            </div>
+
+        </div>
+
+
+{% endblock %}

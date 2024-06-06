@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Case List</title>
+   <!-- <link rel="stylesheet" href="caselist.css">-->
+   <link rel="stylesheet" href="{% static 'css/newCaseList.css' %}">
+   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-logo">
+       <!--<img src="newlogo.jpg" alt="new ctu logo">--> 
+        <img src="{% static 'imgs/newlogo.jpg' %}" alt="new ctu logo">
+
+    </div>
+    
+
+    <div class="container">
+        <h2>Student Case List</h2>
+        <div class="search-container">
+            <form action="" method="GET">
+                <input id="search" type="search" placeholder="Search Student ID"  required class="search-btn" name="q" value="{{ query|default_if_none:'' }}"/>
+                <button class="search-btn2" type="submit">Go</button> 
+            </form>
+        </div>
+        
+        <div class="new-head-container">
+            <div class="new-head">
+                <label for="sanction">Sanctions: </label>
+                <input type="text" name="sanction" id="sanction" class="sanctions" value="{{sanction}}">
+            </div>
+        
+            {% if sanction == 'community_service' %}
+            <div class="new-head">
+                <label for="hours">Hours: </label>
+                <input type="text" name="hours" id="hours" class="hour" value="{{community_service_hours}}">
+            </div>
+        
+            <div class="new-head">
+                <label for="deadline">Deadline: </label>
+                <input type="text" name="deadline" id="deadline" class="deadlines" value="{{community_service_deadline}}">
+            </div>
+            {% elif sanction == 'suspension' %}
+            <div class="new-head">
+                <label for="suspension_start_date">Suspension Start Date:</label>
+                <input type="text" name="suspension_start_date" id="suspension_start_date" class="hour" value="{{suspension_start_date}}">
+            </div>
+        
+            <div class="new-head">
+                <label for="suspension_end_date">Suspension End Date: </label>
+                <input type="text" name="suspension_end_date" id="suspension_end_date" class="deadlines" value="{{suspension_end_date}}">
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case Number</th>
+                        <th>Full Name</th>
+                        <th>Violations</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Classification</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if cases %}
+                    {% for case in cases %}
+                    <tr>
+                        <td> {{ case.id }}</td>
+                        <td>{{case.student.lastname}}, {{case.student.firstname}} {{case.student.middlename}}</td>
+                        <td>{{case.violation}}</td>
+                        <td>{{case.description}}</td>
+                        <td>{{case.case_date}}</td>
+                        <td>{{case.case_class}}</td>
+                        <td><a href="{% url 'update-case' case.id %}">Update</a></td>
+                        <td><a href="{% url 'deletecaserecord' case.id %}">Delete</a></td>
+                        
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+       
+        <div class="btn-container">
+            <a href="{% url 'NewCase' %}" class="btn">Home</a>
+        </div>
+    </div>
+    
+   
+</body>
+</html>

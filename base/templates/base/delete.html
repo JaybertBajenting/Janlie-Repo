@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{obj}}"?</p>
+            <a href="{{request.META.HTTP_REFERER}}">Cancel</a>
+            <input type="submit" value="Confirm" />
+        </form>
+    </div>
+</body>
+</html>

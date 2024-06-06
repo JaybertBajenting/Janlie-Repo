@@ -1,0 +1,278 @@
+.case-container {
+    color: black;
+    height: 600px;
+    margin: 1% 2% 1% 22%;
+    width: 75%;
+}
+
+.case-container img {
+    margin: 2% auto;
+    display: block;
+    width: 45%;
+    height: auto;
+}
+
+.case-container h4 {
+    margin: 1% 0;
+    text-align: center;
+    color: rgb(60, 56, 56);
+}
+
+.case-container input{
+    border: none;
+    border-bottom: 1px solid #333;
+    color: black;
+    outline: none;
+    font-size: 17px;
+    margin-left: 2%;
+}
+.case-container input:not([type="date"]) {
+    margin-left: 2%;
+}
+
+.case-container button {
+    margin-left: 60%;
+}
+
+/* Case List Button */
+.caselist-btn {
+    box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+    background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+    border-radius: 6px;
+    border: 1px solid #d83526;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 11px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b23e35;
+    margin-left: 7.8%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.caselist-btn:hover {
+    background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+}
+
+.caselist-btn:active {
+    position: relative;
+    top: 1px;
+}
+
+/* Main Content */
+.svr-label {
+    margin-top: 2%;
+    text-align: center;
+    color: rgb(60, 56, 56);
+    font-weight: bold;
+}
+
+.case-form {
+    color: black;
+}
+
+form label {
+    color: black;
+}
+
+.main-content {
+    margin: 1.5% 0 0 2%;
+}
+.main-content label{
+    font-weight: bold;
+}
+/* Form Inputs 
+    USELESS JAPON
+
+.case_date,
+.student_name,
+.year_section,
+.violation,
+.descript,
+.guard-sign {
+    border: none;
+    border-bottom: 1px solid #333;
+    color: black;
+    outline: none;
+    font-size: 17px;
+    margin-left: 2%;
+}
+*/
+.descript{
+    margin-top: 1%;
+}
+.contens-container {
+    margin-top: 5%;
+}
+
+.contens-container,
+.student_name1,
+.student_violation1,
+.description {
+    margin-left: 6%;
+}
+
+.student_name1 {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label-student,
+.label-violation,
+.label-descript,
+.label-guard {
+    margin-right: 10px;
+    flex: 0 0 auto;
+}
+.label-descript{
+    margin-top: 1.6%;
+}
+#student_name,
+#year_section,
+.descript {
+    flex: 1;
+    min-width: 0;
+}
+
+.student_violation1 {
+    margin-top: 0%;
+}
+
+#student_violation {
+    width: 80%;
+}
+#descript{
+    width: 80%;
+    margin-left: 8%;
+}
+#student_name{
+    margin-left: 3.7%;
+}
+
+
+/*Classification*/
+.classification option {
+    color: black;
+}
+.label-class{
+    margin-top: 10%;
+    margin-left: 5.9%;
+}
+.class-cmb {
+    margin-top: 2%;
+    color: black;
+}
+.class-cmb select{
+    color: black;
+    width: 17%;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    margin-left: 6.8%;
+}
+
+
+
+
+
+
+
+/* Guard Signature */
+.guard-signature {
+    margin-top: 5%;
+    margin-left: 72%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.guard-sign {
+    margin-bottom: 5px;
+    margin-right: 35%;
+}
+
+.label-guard {
+    margin-top: 5px;
+    font-weight: bolder;
+}
+
+/* Footer Content */
+.footer-content h4{
+    margin-top: 5%;
+}
+.footer-content h5 {
+    color: black;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+.report{
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+.received_by {
+    margin-top: 0;
+    margin-left: 5.7%;
+}
+
+.received_by select {
+    color: black;
+    width: 19%;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.received_by option {
+    color: black;
+}
+
+/* Save Case Button */
+.mybtn-container {
+    margin-top: 4%;
+    width: 40%;
+    margin-left: 20%;
+}
+
+.myButton {
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    border-radius: 3px;
+    border: 1px solid #124d77;
+    color: #ffffff;
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px 19px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #154682;
+    margin: 10% 0 5% 55%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    margin: 2% 0 0 17%;
+}

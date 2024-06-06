@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Case List</title>
+   <!-- <link rel="stylesheet" href="caselist.css">-->
+   <link rel="stylesheet" href="{% static 'css/caselist.css' %}">
+</head>
+<body>
+    <div class="header-logo">
+       <!--<img src="newlogo.jpg" alt="new ctu logo">--> 
+        <img src="{% static 'imgs/newlogo.jpg' %}" alt="new ctu logo">
+
+    </div>
+
+    <div class="container">
+        <h2>Student Case List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Violations</th>
+                    <th>Description</th>
+                    <th>Community Service Tracker</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for case in cases %}
+                <h3>Sanction: {{case.sanction}}</h3>
+                {% if case.sanction == 'community_service' %}
+                    <p>Community Service Hours: {{ case.community_service_hours }}</p>
+                    <p>Community Service Deadline: {{ case.community_service_deadline }}</p>
+                {% elif case.sanction == 'suspension' %}
+                    <p>Suspension Start Date: {{ case.suspension_start_date }}</p>
+                    <p>Suspension End Date: {{ case.suspension_end_date }}</p>
+                {% endif %}
+                <tr>
+                    <td>{{case.student.lastname}}, {{case.student.firstname}} {{case.student.middlename}}</td>
+                    <td>{{case.violation}}</td>
+                    <td>{{case.description}}</td>
+                    <td><a href="{% url 'service-tracker' case.id %}">Click Me</a></td>
+                    <td><a href="{% url 'deletecaserecord' case.id %}">Delete</a></td>
+                    <td><a href="{% url 'update-case' case.id %}">Update</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <a href="{% url 'NewCase' %}" class="btn">Home</a>
+        </div>
+    </div>
+</body>
+</html>

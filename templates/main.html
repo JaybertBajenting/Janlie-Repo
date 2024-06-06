@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+    <head>
+        <title>STUDENT LIFE INFORMATION SYSTEM</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+        {% block headcontent %}
+
+        {% endblock headcontent %}
+       
+    </head>
+    <body>
+        <div class="orange-bar">
+            <img src="{% static 'imgs/CTU_logo.png' %}" class="logo">
+            <img src="{% static 'imgs/barSort.png' %}" class="bars">
+        </div>
+        <nav class="side-nav">
+        <ul>
+            <li><a href="#" class="studentlife-btn">OFFICE OF STUDENT LIFE 
+                <span class="fas fa-caret-down first"></span>
+            </a>
+                <ul class="studentlife">
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Good Moral Certificate Issuance</a></li>
+                    <li><a href="#">PPMP Tracker</a></li>
+                    <li><a href="#">Monthly Calendar of Activites</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="scholar-btn">SCHOLARSHIP
+                <span class="fas fa-caret-down second"></span>
+            </a>
+            <ul class="scholar-show">
+                <li><a href="#">Submission of Requirements Tracker</a></li>
+                <li><a href="#">Scholars Profile and Validation</a></li>
+                <li><a href="#">Grade Submission with GPA Computation</a></li>
+                <li><a href="#">Mentorship Program</a></li>
+                <li><a href="#">Admin Cost Liquidation Tracker</a></li>
+                <li><a href="#">CHED Reports Submission</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+            <li><a href="#" class="jobplace-btn">JOB PLACEMENT
+                <span class="fas fa-caret-down third"></span>    
+            </a>
+            <ul class="jobplace-show">
+                <li><a href="#">OJT Hiring</a></li>
+                <li><a href="#">Career Guidance Tracker</a></li>
+                <li><a href="#">OJT Requirements Tracker</a></li>
+                <li><a href="#">Non-Academic Award Issuance</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+            <li><a href="#" class="student_disc-btn">STUDENT DISCIPLINE
+               <span class="fas fa-caret-down fourth"></span>
+            </a>
+            <ul class="student_disc-show">
+                <li><a href="{% url 'NewCase' %}">Case Profile</a></li>
+                <li><a href="{% url 'case-list' %}">Hours Rendered for Community Service Tracker</a></li>
+                <li><a href="{% url 'req_goodmoral' %}">Good Moral Certificate Issuance</a></li>
+                <li><a href="{% url 'transaction' %}">Transaction Reports</a></li>
+                
+            </ul>
+            </li>
+            <li><a href="#" class="guide-btn">GUIDANCE
+               <span class="fas fa-caret-down fifth"></span>
+            </a>
+            <ul class="guide-show">
+                <li><a href="#">Individual Profile with Guidance Concern</a></li>
+                <li><a href="#">Counseling App with Scheduler</a></li>
+                <li><a href="#">Intake Interview</a></li>
+                <li><a href="#">Exit Interview</a></li>
+                <li><a href="#">OJT Assessments/Psychological Issuance</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+            <li><a href="#" class="alumni-btn">ALUMNI
+               <span class="fas fa-caret-down sixth"></span>
+            </a>
+            <ul class="alumni-show">
+                <li><a href="#">Alumni ID Requests</a></li>
+                <li><a href="#">Graduate Tracer</a></li>
+                <li><a href="#">Alumni Reunion and Events</a></li>
+                <li><a href="#">Job Fairs</a></li>
+                <li><a href="#">Digital Yearbook</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+            <li><a href="#" class="community-btn">COMMUNITY INVOLVEMENT
+               <span class="fas fa-caret-down seventh"></span>
+            </a>
+            <ul class="community-show">
+                <li><a href="#">Events</a></li>
+                <li><a href="#">CrowdFunding Projects</a></li>
+                <li><a href="#">Donatio App</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+                
+            </ul>
+            </li>
+            <li><a href="#" class="student_org-btn">STUDENT ORGANIZATION
+               <span class="fas fa-caret-down eight"></span>
+            </a>
+            <ul class="student_org-show">
+                <li><a href="#">Org Profile</a></li>
+                <li><a href="#">Projects and Accomplishments</a></li>
+                <li><a href="#">Financial Statements Reports</a></li>
+                <li><a href="#">Accreditation Application</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+            <li><a href="#" class="medical-btn">MEDICAL
+               <span class="fas fa-caret-down ninth"></span>
+            </a>
+            <ul class="medical-show">
+                <li><a href="#">Patient Profile</a></li>
+                <li><a href="#">Student Medical Requirements Tracker</a></li>
+                <li><a href="#">Emergency Health Assistance</a></li>
+                <li><a href="#">PWD Profile</a></li>
+                <li><a href="#">Dental Services</a></li>
+                <li><a href="#">Medical Clearance Issuance</a></li>
+                <li><a href="#">Prescription Issuance</a></li>
+                <li><a href="#">Transaction Reports</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+        </nav>
+
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="text" placeholder="Search...">
+           
+        </div>
+        <form method="GET" action="">
+            <div class="search-container">
+                <div class="search-icon">
+                    <button class="btn-search" style="border:none" type="submit" value="search" >
+                        <i class="fa-solid fa-magnifying-glass" ></i>
+                    </button>
+                    
+                </div>
+                <input type="text" placeholder="Search..." class="search" name="q" value="{{ query|default_if_none:'' }}">
+            </div>
+        
+        </form>
+
+        {% block bodycontent %}
+
+        
+
+        {% endblock  %}
+
+       <script src="{% static 'js/main.js' %}"></script>
+    </body>
+    
+</html>
